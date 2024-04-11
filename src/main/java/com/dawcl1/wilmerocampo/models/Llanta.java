@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 public class Llanta {
 
-    private double precio;
-
+    private double totalpagar;
+    private int cantidad;
 }
