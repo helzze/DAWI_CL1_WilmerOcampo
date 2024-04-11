@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="card col-md-6">
+        <div class="card-body">
+            <h2 class="card-title">Resultado del cálculo</h2>
+            <p class="card-text">Cantidad de llantas: </p> <input th:value="${cantidad}">
+            <p class="card-text">Total a pagar: S/. </p> <input th:value="${totalPagar}">
+            <button class="btn btn-primary" onclick="mostrarFormulario()">Volver al formulario</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
