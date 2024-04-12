@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class NumeroController {
@@ -13,8 +14,6 @@ public class NumeroController {
         model.addAttribute("numeroModel", new Numero());
         return "numeroentero";
     }
-
-
 
     @PostMapping("/numeroentero")
     public String descomponerNumero(Numero numeroModel, Model model) {
@@ -26,5 +25,23 @@ public class NumeroController {
         model.addAttribute("numeroModel", numeroModel);
         return "numeroentero";
     }
+
+    @GetMapping("/suma-numeros")
+    public String showNumberForm() {
+        return "sumanumeros";
+    }
+
+    @PostMapping("/suma-numeros")
+    public String sumDigits(@RequestParam("numero") int numero, Model model) {
+        Numero numero_sumar = new Numero();
+        numero_sumar.setNumero(numero);
+        int sum = numero_sumar.sumarDigitos();
+
+        model.addAttribute("numero", numero);
+        model.addAttribute("suma", sum);
+
+        return "sumanumeros";
+    }
+
 
 }
