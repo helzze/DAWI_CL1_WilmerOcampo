@@ -8,8 +8,11 @@
   <style>
     h1 {
         margin-top: 50px;
-        margin-bottom: 70px;
+        margin-bottom: 30px;
         font-weight: bold;
+    }
+    .form-group {
+        margin-bottom: 20px;
     }
   </style>
 
@@ -24,12 +27,11 @@
       <input type="number" class="form-control" id="numero" name="numero" required>
     </div>
     <div>
-      <button type="submit" class="btn btn-primary">Verificar</button>
+      <button type="submit" class="btn btn-primary btn-lg">Verificar</button>
       <br />
-      <div th:if="${mmsg}" class="alert alert-danger" role="alert">
+      <div th:if="${mmsg}" class="alert alert-danger mt-3" role="alert">
         <span th:text="${resultado} ?: ''"></span>
       </div>
-
     </div>
   </form>
 </div>
