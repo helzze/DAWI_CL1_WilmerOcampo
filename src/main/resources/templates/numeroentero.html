@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 2</title>
+   <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<h1>Obteniendo Decenas Y Unidades</h1>
+<form action="/numeroentero" method="post" th:object="${numeroModel}">
+    <label for="numero">Ingresar un número entero de 3 cifras:</label><br>
+    <input type="number" id="numero" name="numero" min="100" max="999" required><br>
+    <input type="submit" value="Mostrar">
+</form>
+
+<div th:if="${numeroModel}">
+    <p>El número ingresado es: <span th:text="${numeroModel.numero}"></span></p>
+    <p>Unidades: <span th:text="${numeroModel.unidades}"></span></p>
+    <p>Decenas: <span th:text="${numeroModel.decenas}"></span></p>
+</div>
+</body>
+</html>
