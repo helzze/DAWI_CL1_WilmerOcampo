@@ -1,10 +1,12 @@
 package com.dawcl1.wilmerocampo.controllers;
 
 import com.dawcl1.wilmerocampo.models.Numero;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@Controller
 public class NumeroController {
     @GetMapping("/numeroentero")
     public String mostrarFormulario(Model model) {
