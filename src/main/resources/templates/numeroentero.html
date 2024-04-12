@@ -11,7 +11,7 @@
 <body>
 <nav th:replace="layout::menu"></nav>
 <h1>Obteniendo Decenas Y Unidades</h1>
-<form action="/numeroentero" method="post" th:object="${numeroModel}">
+<form action="/numero-entero" method="post" th:object="${numeroModel}">
     <label for="numero">Ingresar un número entero de 3 cifras:</label><br>
     <input type="number" id="numero" name="numero" min="100" max="999" required><br>
     <button type="submit" class="btn btn-outline-info">Mostrar</button>

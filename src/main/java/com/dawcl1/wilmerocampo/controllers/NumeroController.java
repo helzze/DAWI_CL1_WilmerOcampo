@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class NumeroController {
-    @GetMapping("/numeroentero")
+    @GetMapping("/numero-entero")
     public String mostrarFormulario(Model model) {
         model.addAttribute("numeroModel", new Numero());
         return "numeroentero";
     }
 
-    @PostMapping("/numeroentero")
+    @PostMapping("/numero-entero")
     public String descomponerNumero(Numero numeroModel, Model model) {
         int numero = numeroModel.getNumero();
         int unidades = numero % 10;

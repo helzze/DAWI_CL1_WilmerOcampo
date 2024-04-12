@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LlantaController {
 
-    @GetMapping("/inicio")
+    @GetMapping("/calcular-llantas")
     public String mostrarFormulario() {
         return "llanta-formulario";
     }
 
-    @PostMapping("/calculartotal")
+    @PostMapping("/calcular-total")
     public String calcularTotal(@RequestParam int cantidad, Model model) {
         double totalPagar;
         if (cantidad < 5) {
