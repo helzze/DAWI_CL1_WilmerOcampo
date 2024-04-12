@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregunta 3</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<div class="container">
+  <h1>Pregunta 3 | Número Perfecto</h1>
+  <form th:action="@{/verificar}" method="post" th:object="${numeroNatural}">
+    <div class="form-group">
+      <label for="numero">Ingrese un número natural:</label>
+      <input type="number" class="form-control" id="numero" name="numero" required>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">Verificar</button>
+      <br />
+      <div th:if="${mmsg}" class="alert alert-danger" role="alert">
+        <span th:text="${resultado} ?: ''"></span>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
