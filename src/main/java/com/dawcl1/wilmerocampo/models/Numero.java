@@ -10,4 +10,13 @@ public class Numero {
     private int unidades;
     private  int decenas;
 
+    public int sumarDigitos(){
+        int sum = 0;
+        int numero_temporal = numero;
+        while (numero_temporal != 0){
+            sum += numero_temporal % 10;
+            numero_temporal /= 10;
+        }
+        return sum;
+    }
 }

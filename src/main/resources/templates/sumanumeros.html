@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Sumar dígitos de un número</title>
+    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Ingrese un número de 4 dígitos:</h2>
+    <form action="/suma-numeros" method="post">
+        <input type="number" name="numero" required class="form-control mb-3">
+        <button type="submit" class="btn btn-primary">Sumar dígitos</button>
+    </form>
+    <hr>
+    <div th:if="${suma != null}">
+        <h2>Resultado:</h2>
+        <p>El número ingresado es: <span th:text="${numero}"></span></p>
+        <p>La suma de los dígitos es: <span th:text="${suma}"></span></p>
+    </div>
+</div>
+<script th:src="@{/js/bootstrap/bootstrap.bundle.js}"></script>
+</body>
+</html>
