@@ -9,7 +9,7 @@ public class NumeroController {
     @GetMapping("/numeroentero")
     public String mostrarFormulario(Model model) {
         model.addAttribute("numeroModel", new Numero());
-        return "Numero/numeroentero";
+        return "numeroentero";
     }
 
 
@@ -22,7 +22,7 @@ public class NumeroController {
         numeroModel.setUnidades(unidades);
         numeroModel.setDecenas(decenas);
         model.addAttribute("numeroModel", numeroModel);
-        return "Numero/numeroentero";
+        return "numeroentero";
     }
 
 }
